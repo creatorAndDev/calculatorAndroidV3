@@ -25,4 +25,7 @@
     <string name="in_the_square">n&#178;</string>
     <string name="cubed">n&#179;</string>
     <string name="square_root">&#8730;</string>
+
+    <!--others-->
+    <string name="approximate">Примерно &#8776;</string>
 </resources>

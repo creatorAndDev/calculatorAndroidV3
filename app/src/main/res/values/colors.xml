@@ -13,6 +13,7 @@
     <color name="colorOrange">#ffbf00</color>
     <color name="colorBlue">#009BDE</color>
     <color name="colorLightGrey">#F5F5F5</color>
+    <color name="colorVeryLightGrey">#BDBDBD</color>
     <color name="colorVeryLightBlue">#f6f9fb</color>
 
     <!--dark-->
