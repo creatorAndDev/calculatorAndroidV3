@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //текстовое поле для вывода результата
     TextView resultField;
@@ -55,14 +55,25 @@ public class MainActivity extends AppCompatActivity {
         clearAll = (Button) findViewById(R.id.clearAll);
 
         //Вызов обработки нажатия на экран//
-        registerListeners();
+        //устанавливаем один обработчик для всех кнопок
+        button0.setOnClickListener(this);
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
     }
 
-    //метод - обработка нажатия на экран
-    public void registerListeners () {
-        button0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    // Метод для слушателя, который имплементируется от основного класса.
+    // Анализируем, какая кнопка была нажата. Всего один метод для всех кнопок
+    @Override
+    public void onClick(View v){
+        switch (v.getId()) {
+            case R.id.button0:
                 if (numberField.getText().toString().equals("")) {
                     // Здесь код, если EditText пуст
                     numberField.setText("");
@@ -70,77 +81,45 @@ public class MainActivity extends AppCompatActivity {
                     // если есть текст, то здесь другой код
                     numberField.append(button0.getText());
                 }
-            }
-        });
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button1:
                 numberField.append(button1.getText());
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button2:
                 numberField.append(button2.getText());
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button3:
                 numberField.append(button3.getText());
-            }
-        });
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button4:
                 numberField.append(button4.getText());
-            }
-        });
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button5:
                 numberField.append(button5.getText());
-            }
-        });
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button6:
                 numberField.append(button6.getText());
-            }
-        });
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button7:
                 numberField.append(button7.getText());
-            }
-        });
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button8:
                 numberField.append(button8.getText());
-            }
-        });
-        button9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.button9:
                 numberField.append(button9.getText());
-            }
-        });
-
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (numberField.getText().toString().equals("")) {
-                    // Здесь код, если EditText пуст
-                    numberField.setText("");
-                } else {
-                    // если есть текст, то здесь другой код
-//                    numberField.setText(numberField.getText().toString() + plus.getText());
-                }
-            }
-        });
+                break;
+        }
     }
-
 
     //обработка нажатия очистки экрана
     public void onClear(View view) {
