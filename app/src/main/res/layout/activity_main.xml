@@ -17,6 +17,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_view_edit"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_height="wrap_content"
@@ -80,7 +81,7 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/buttonMul"
+                        android:id="@+id/multiply"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -88,11 +89,10 @@
                         android:text="@string/multiply"
                         android:textColor="@color/colorBlue"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onOperationClick"/>
+                        android:background="@drawable/button_border" />
 
                     <Button
-                        android:id="@+id/buttonDiv"
+                        android:id="@+id/divide"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -100,11 +100,10 @@
                         android:text="@string/division"
                         android:textColor="@color/colorBlue"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onOperationClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
-                        android:id="@+id/buttonSub"
+                        android:id="@+id/minus"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -112,11 +111,10 @@
                         android:text="@string/minus"
                         android:textColor="@color/colorBlue"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onOperationClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
-                        android:id="@+id/buttonAdd"
+                        android:id="@+id/plus"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -124,8 +122,7 @@
                         android:text="@string/plus"
                         android:textColor="@color/colorBlue"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onOperationClick"/>
+                        android:background="@drawable/button_border"/>
                 </TableRow>
                 <TableRow
                     android:layout_weight="1"
@@ -141,8 +138,7 @@
                         android:text="@string/seven"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/button8"
@@ -153,8 +149,7 @@
                         android:text="@string/eight"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/button9"
@@ -165,11 +160,10 @@
                         android:text="@string/nine"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
-                        android:id="@+id/button_square"
+                        android:id="@+id/square"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -194,8 +188,7 @@
                         android:text="@string/four"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/button5"
@@ -206,8 +199,7 @@
                         android:text="@string/five"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/button6"
@@ -218,11 +210,10 @@
                         android:text="@string/six"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
-                        android:id="@+id/button_cubed"
+                        android:id="@+id/cubed"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -247,8 +238,7 @@
                         android:text="@string/one"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/button2"
@@ -259,8 +249,7 @@
                         android:text="@string/two"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/button3"
@@ -271,8 +260,7 @@
                         android:text="@string/three"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
                         android:id="@+id/precent"
@@ -291,7 +279,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
                     <Button
-                        android:id="@+id/buttonC"
+                        android:id="@+id/clearAll"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -311,11 +299,10 @@
                         android:text="@string/zero"
                         android:textColor="@color/colorBlack"
                         android:textSize="30sp"
-                        android:background="@drawable/button_border"
-                        android:onClick="onNumberClick"/>
+                        android:background="@drawable/button_border"/>
 
                     <Button
-                        android:id="@+id/buttonDot"
+                        android:id="@+id/dot"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -326,7 +313,7 @@
                         android:background="@drawable/empty_item"/>
 
                     <Button
-                        android:id="@+id/buttonEql"
+                        android:id="@+id/equally"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:fontFamily="monospace"
@@ -334,8 +321,7 @@
                         android:text="@string/equally"
                         android:textColor="@color/colorWhite"
                         android:textSize="30sp"
-                        android:background="@color/colorBlue"
-                        android:onClick="onResult"/>
+                        android:background="@color/colorBlue"/>
                 </TableRow>
             </TableLayout>
         </LinearLayout>
