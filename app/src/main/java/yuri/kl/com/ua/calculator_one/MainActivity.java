@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //текстовое поле для вывода результата
@@ -25,7 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button square, cubed, precent, dot;
 
     //Результат который заносится в масив для обработки
-    //ArrayList<Float> result = new ArrayList<Float>();
+    ArrayList<Float> result = new ArrayList<Float>();
+
+    //первое введенное число
+    float number1;
+
+    //второе введенное число
+    float number2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button8 = (Button) findViewById(R.id.button8);
         button9 = (Button) findViewById(R.id.button9);
 
+        plus = (Button) findViewById(R.id.plus);
+        minus = (Button) findViewById(R.id.minus);
         multiply = (Button) findViewById(R.id.multiply);
         divide = (Button) findViewById(R.id.divide);
-        minus = (Button) findViewById(R.id.minus);
-        plus = (Button) findViewById(R.id.plus);
         equally = (Button) findViewById(R.id.equally);
         clearAll = (Button) findViewById(R.id.clearAll);
+
+//        numberField.setKeyListener(DigitsKeyListener.getInstance(true,true));
 
         //Вызов обработки нажатия на экран//
         //устанавливаем один обработчик для всех кнопок
@@ -66,12 +76,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
         button9.setOnClickListener(this);
+
+        plus.setOnClickListener(this);
     }
 
     // Метод для слушателя, который имплементируется от основного класса.
     // Анализируем, какая кнопка была нажата. Всего один метод для всех кнопок
     @Override
     public void onClick(View v){
+//        result.add(Float.parseFloat(numberField.getText().toString()));
+
         switch (v.getId()) {
             case R.id.button0:
                 if (numberField.getText().toString().equals("")) {
@@ -118,11 +132,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button9:
                 numberField.append(button9.getText());
                 break;
+
+            case R.id.plus:
+                if (numberField.getText().toString().equals("")) {
+                    // Здесь код, если EditText пуст
+                    numberField.setText("");
+                } else {
+                    // если есть текст, то здесь другой код
+//                    numberField.setText("hello");
+
+//                    //записали введеные числа
+//                    number1 = result.get(0);
+//                    number2 = result.get(1);
+
+//                    result.add(number1 + number2);
+
+//                    numberField.setText("1");
+//
+//                    //очистим поле результата
+//                    result.removeAll(result);
+//
+//                    //получаем результат из двух ячеек памяти коллекций
+//                    result.add(number1 + number2);
+//
+//                    //выводим результат
+//                    numberField.setText(String.format("%.0f", result.get(0)));
+                }
+                break;
         }
     }
 
     //обработка нажатия очистки экрана
     public void onClear(View view) {
         numberField.setText("");
+//        result.removeAll(result);
     }
 }
