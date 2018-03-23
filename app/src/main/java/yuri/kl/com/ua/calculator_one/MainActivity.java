@@ -11,6 +11,15 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //создаем счетчик наших операторов
+    int currentOperation = 0;
+
+    //операторы, case'ы для switch
+    final static int ADD = 1;
+
+    // флаг проверки нажатия, false - не нажималась
+    boolean isPressed = false;
+
     //текстовое поле для вывода результата
     TextView resultField;
 
@@ -80,19 +89,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plus.setOnClickListener(this);
     }
 
-    // Метод для слушателя, который имплементируется от основного класса.
-    // Анализируем, какая кнопка была нажата. Всего один метод для всех кнопок
+    // Метод для слушателя, который имплементируется от основного класса. Всего один метод для всех кнопок
     @Override
     public void onClick(View v){
-//        result.add(Float.parseFloat(numberField.getText().toString()));
 
+        // Анализируем, какая кнопка была нажата.
         switch (v.getId()) {
             case R.id.button0:
-                if (numberField.getText().toString().equals("")) {
-                    // Здесь код, если EditText пуст
-                    numberField.setText("");
-                } else {
-                    // если есть текст, то здесь другой код
+                //проверяем не пустое ли поле ввода. Если пустое, тогда не ставим 0, иначе ставим.
+                if (!numberField.getText().toString().equals("")) {
                     numberField.append(button0.getText());
                 }
                 break;
@@ -131,33 +136,74 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.button9:
                 numberField.append(button9.getText());
+                if (isPressed == true) {
+                    resultField.setText("Test 2");
+                }
                 break;
 
             case R.id.plus:
-                if (numberField.getText().toString().equals("")) {
-                    // Здесь код, если EditText пуст
-                    numberField.setText("");
-                } else {
-                    // если есть текст, то здесь другой код
-//                    numberField.setText("hello");
-
-//                    //записали введеные числа
-//                    number1 = result.get(0);
-//                    number2 = result.get(1);
-
-//                    result.add(number1 + number2);
-
-//                    numberField.setText("1");
-//
-//                    //очистим поле результата
-//                    result.removeAll(result);
-//
-//                    //получаем результат из двух ячеек памяти коллекций
-//                    result.add(number1 + number2);
-//
-//                    //выводим результат
-//                    numberField.setText(String.format("%.0f", result.get(0)));
+                if (!numberField.getText().toString().equals("")) {
+                    // действие, когда кнопка нажималась хотя бы раз
+                    if (isPressed == false) {
+                        // действия, когда кнопка нажималась хотя бы раз
+                        calcLogic(ADD);
+                    }
                 }
+
+                /**шаб проверки на пустое поле из двух рядов*/
+//                if (numberField.getText().toString().equals("")) {
+//                    // Здесь код, если EditText пуст
+//                    numberField.setText("");
+//                } else {
+//                    //передаем методу счетчика операторов наш оператор
+//                    calcLogic(ADD);
+//                    // если есть текст, то здесь другой код
+//                }
+                /** */
+                break;
+        }
+    }
+
+    //метод для счета чисел
+    private void calcLogic(int operator) {
+        //записываем по клику число/символ в переменную result
+//         result.add(Float.parseFloat(numberField.getText().toString()));
+
+
+        //при помощи switch находим нужный нам case (наш оператор под нужным числом который ранее сохранили)
+        switch (operator) {
+            case ADD:
+                //выводим знак оператора
+                numberField.append(plus.getText());
+
+
+                //заносим числа введенных чисел в ячейку number1 и второе число в number2 и берем текущий оператор
+//                toCount(number1, number2, ADD);
+
+//                number1 = result.get(0);
+//                number2 = result.get(1);
+
+//                result.removeAll(result);
+
+//                result.add(number1 + number2);
+
+//                numberField.setText(String.format("%.0f", result.get(0)));
+
+                //ставим флаг что была нажата
+                isPressed = true;
+
+                break;
+        }
+    }
+
+    //метод счета
+    public void toCount(float number1, float number2, int operator) {
+//        result.add(Float.parseFloat(numberField.getText().toString()));
+
+        switch (operator) {
+            case ADD:
+                resultField.setText("Test 1");
+
                 break;
         }
     }
@@ -165,6 +211,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //обработка нажатия очистки экрана
     public void onClear(View view) {
         numberField.setText("");
-//        result.removeAll(result);
+        resultField.setText("0");
+        result.removeAll(result);
+        isPressed = false;
     }
 }
